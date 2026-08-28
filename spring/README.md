@@ -14,3 +14,5 @@
 | 10 | [Spring Security 개념 확인 Q&A](10-spring-security-qa.md) |
 | 11 | [토큰 인증](11-토큰-인증.md) |
 | 20 | [복습 퀴즈 — Spring · JPA](20-복습-퀴즈.md) |
+
+> 서비스를 여러 개로 쪼갰을 때 생기는 이야기(디스커버리·게이트웨이·서킷브레이커)는 [msa](../msa/README.md)에 있습니다.

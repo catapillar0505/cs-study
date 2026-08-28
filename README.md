@@ -63,6 +63,9 @@ cs-study/
 ├── spring/                  12    IoC/DI, 요청과 응답, RESTful API, AOP, MyBatis,
 │                                 트랜잭션, Spring Security, 토큰 인증, 복습 퀴즈
 ├── jpa/                      6    영속성 컨텍스트, 연관관계 매핑, N+1 문제 (+ Q&A)
+├── msa/                      9    모놀리식→MSA, 서비스 디스커버리, API 게이트웨이, 설정 관리,
+│                                 서비스 간 통신, 장애 격리, 분산 추적, Saga,
+│                                 쿠버네티스와 겹치는 지점
 ├── frontend/                      프론트엔드
 │   ├── javascript/           2    개념 정리, 핵심 총정리
 │   └── react/                3    Vite 시작하기, JSX·Babel 트러블슈팅, 개념 총정리
@@ -90,6 +93,7 @@ cs-study/
 | 자바 | [java](java/README.md) | 7 |
 | 스프링 | [spring](spring/README.md) | 12 |
 | JPA | [jpa](jpa/README.md) | 6 |
+| 마이크로서비스 | [msa](msa/README.md) | 9 (뼈대) |
 | 프론트엔드 | [frontend](frontend/README.md) — [javascript](frontend/javascript/README.md) · [react](frontend/react/README.md) | 5 |
 | 버전 관리 | [git](git/README.md) | 1 |
 | 도구 | [tools](tools/README.md) | 1 |
@@ -110,3 +114,6 @@ cs-study/
 - **프라이빗 클라우드** → 개념은 [open-stack](cloud/private-cloud/open-stack/README.md), 구성 요소(Neutron·Ceph)는 [network](network/README.md)·[storage](storage/README.md)
 - **캐시** → 동작은 [database/redis](database/redis/README.md), 설계 전략은 [performance](performance/README.md)
 - **고가용성** → 설계 원칙은 [aws/12](cloud/public-cloud/aws/12-고가용성-설계.md), 스케줄링 구현은 [kubernetes/10](kubernetes/10-podantiaffinity와-스케줄링.md)
+- **서비스 디스커버리** → 애플리케이션이 직접 찾는 방식은 [msa/02](msa/02-서비스-디스커버리.md), 플랫폼이 대신 찾아 주는 방식은 [kubernetes/04](kubernetes/04-서비스디스커버리-service와-coredns.md)
+- **외부 진입점** → 애플리케이션 층은 [msa/03](msa/03-api-게이트웨이.md) Gateway, 플랫폼 층은 [kubernetes/09](kubernetes/09-ingress.md) Ingress
+- **트랜잭션** → 한 DB 안에서는 [spring/08](spring/08-트랜잭션.md)·[database/mysql](database/mysql/README.md), 서비스가 나뉘면 [msa/08](msa/08-분산-트랜잭션과-saga.md)
