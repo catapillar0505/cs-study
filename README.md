@@ -1,6 +1,6 @@
 # cs-study
 
-공부한 CS 개념을 영역별로 정리해 둔 저장소입니다. 문서 127편.
+공부한 CS 개념을 영역별로 정리해 둔 저장소입니다. 문서 144편.
 
 수업을 들으며 남긴 기록에서 시작해, 나중에 다시 찾아볼 수 있도록 다듬었습니다.
 처음에는 날짜별로 쌓다 보니 한 파일에 여러 주제가 뒤섞였고, 그래서 **주제 단위로 다시 쪼개고 영역별로 나눴습니다.**
@@ -64,8 +64,10 @@ cs-study/
 │                                 트랜잭션, Spring Security, 토큰 인증, 복습 퀴즈
 ├── jpa/                      6    영속성 컨텍스트, 연관관계 매핑, N+1 문제 (+ Q&A)
 ├── msa/                      9    모놀리식→MSA, 서비스 디스커버리, API 게이트웨이, 설정 관리,
-│                                 서비스 간 통신, 장애 격리, 분산 추적, Saga,
-│                                 쿠버네티스와 겹치는 지점
+│   │                             서비스 간 통신, 장애 격리, 분산 추적, Saga,
+│   │                             쿠버네티스와 겹치는 지점
+│   └── eda/                 17    이벤트 기반 아키텍처, RabbitMQ·Kafka, Spring Cloud Stream,
+│                                 Ack·DLQ, Saga 2종, Transactional Outbox, 멱등성
 ├── frontend/                      프론트엔드
 │   ├── javascript/           2    개념 정리, 핵심 총정리
 │   └── react/                3    Vite 시작하기, JSX·Babel 트러블슈팅, 개념 총정리
@@ -93,7 +95,7 @@ cs-study/
 | 자바 | [java](java/README.md) | 7 |
 | 스프링 | [spring](spring/README.md) | 12 |
 | JPA | [jpa](jpa/README.md) | 6 |
-| 마이크로서비스 | [msa](msa/README.md) | 9 (뼈대) |
+| 마이크로서비스 | [msa](msa/README.md) — [eda](msa/eda/README.md) | 26 (msa 9편은 뼈대) |
 | 프론트엔드 | [frontend](frontend/README.md) — [javascript](frontend/javascript/README.md) · [react](frontend/react/README.md) | 5 |
 | 버전 관리 | [git](git/README.md) | 1 |
 | 도구 | [tools](tools/README.md) | 1 |
@@ -116,4 +118,5 @@ cs-study/
 - **고가용성** → 설계 원칙은 [aws/12](cloud/public-cloud/aws/12-고가용성-설계.md), 스케줄링 구현은 [kubernetes/10](kubernetes/10-podantiaffinity와-스케줄링.md)
 - **서비스 디스커버리** → 애플리케이션이 직접 찾는 방식은 [msa/02](msa/02-서비스-디스커버리.md), 플랫폼이 대신 찾아 주는 방식은 [kubernetes/04](kubernetes/04-서비스디스커버리-service와-coredns.md)
 - **외부 진입점** → 애플리케이션 층은 [msa/03](msa/03-api-게이트웨이.md) Gateway, 플랫폼 층은 [kubernetes/09](kubernetes/09-ingress.md) Ingress
-- **트랜잭션** → 한 DB 안에서는 [spring/08](spring/08-트랜잭션.md)·[database/mysql](database/mysql/README.md), 서비스가 나뉘면 [msa/08](msa/08-분산-트랜잭션과-saga.md)
+- **트랜잭션** → 한 DB 안에서는 [spring/08](spring/08-트랜잭션.md)·[database/mysql](database/mysql/README.md), 서비스가 나뉘면 [msa/08](msa/08-분산-트랜잭션과-saga.md)과 [msa/eda](msa/eda/README.md)
+- **밀려드는 부하** → 넘치면 거절하는 쪽은 [msa/06](msa/06-장애-격리.md)·[performance/02](performance/02-스레드풀.md), 쌓아 두고 나중에 처리하는 쪽은 [msa/eda/03](msa/eda/03-eda-도입의-3대-이점.md)

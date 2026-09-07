@@ -34,6 +34,7 @@
 - "Saga = 롤백" — 되돌리는 게 아니라 **반대 작업을 새로 하는 것**
 
 > 단일 DB에서의 트랜잭션·격리 수준은 [spring/08](../spring/08-트랜잭션.md)과 [database/mysql](../database/mysql/README.md)
+> Saga 두 방식의 흐름도, Outbox 패턴, 멱등성까지 펼친 내용은 [eda](eda/README.md)
 
 ---
 
