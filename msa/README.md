@@ -30,6 +30,7 @@
 | [gateway](gateway/README.md) | 4 | **API 게이트웨이.** 라우팅·로드밸런싱, 필터, Rate Limiter |
 | [auth](auth/README.md) | 7 | **인증·인가.** JWT, OAuth2·Keycloak, 역할 기반 인가, BFF, SPA·CORS, 회원가입 |
 | [observation](observation/README.md) | 7 | **관측 가능성.** 지표·추적·로그, Prometheus·Grafana, OpenTelemetry, Loki, PLG 실습 |
+| [cicd](cicd/README.md) | 6 | **배포 자동화.** CI/CD, GitOps, ArgoCD, GitHub Actions·Jenkins 실습 |
 | [eda](eda/README.md) | 17 | **비동기·이벤트.** RabbitMQ·Kafka, Spring Cloud Stream, Ack/DLQ, Saga, Outbox, 멱등성 |
 
 개요 문서가 **"무슨 문제인가"** 를 짚고, 하위 폴더가 **"어떻게 푸는가"** 를 펼칩니다.
@@ -41,6 +42,7 @@
 07 분산 추적 ────────── observation/ (지표·추적·로그 전반)
 08 분산 트랜잭션 ────── eda/ (Saga·Outbox)
 (인증은 개요 없이) ──── auth/
+(배포는 개요 없이) ──── cicd/
 ```
 
 ## 읽는 순서
@@ -58,5 +60,6 @@
    → gateway/                      (앞에 관문 두기)
    → auth/                         (관문에서 인증하기)
    → observation/                  (돌아가는 걸 들여다보기)
+   → cicd/                         (배포를 자동화하기)
    → eda/                          (아예 기다리지 않기)
 ```
