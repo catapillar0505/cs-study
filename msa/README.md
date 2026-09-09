@@ -15,13 +15,12 @@
 | 04 | [설정 관리](04-설정-관리.md) | Config Server, 파일명 규칙, 재시작 없는 갱신, Bus 방송 |
 | 05 | [서비스 간 통신](05-서비스-간-통신.md) | 동기 vs 비동기, 결합도, 무엇을 언제 쓰는가 |
 | 06 | [장애 격리](06-장애-격리.md) | 연쇄 장애, Retry·Circuit Breaker·Bulkhead·Fallback |
-| 07 | [분산 추적](07-분산-추적.md) | traceId 전파, 구간별 지연, 로그 상관관계 |
+| 07 | [분산 추적](07-분산-추적.md) | traceId·spanId 전파, 구간별 지연 해석, 샘플링 |
 | 08 | [분산 트랜잭션과 Saga](08-분산-트랜잭션과-saga.md) | 2PC를 안 쓰는 이유, 보상 트랜잭션, 최종 일관성 |
 | 09 | [멀티모듈 프로젝트 구조](09-멀티모듈-프로젝트-구조.md) | 모듈 나누기, 의존 방향 강제, 스캔 범위 함정 |
 | 90 | [쿠버네티스와 겹치는 지점](90-쿠버네티스와-겹치는-지점.md) | 같은 문제를 누가 푸는가, 둘 다 켰을 때 |
 
-> 07·08은 아직 뼈대만 잡아 둔 상태입니다. 각 문서에 채울 항목이 적혀 있습니다.
-> (08의 실제 내용은 대부분 [eda](eda/README.md)에 있습니다.)
+> 08은 아직 뼈대만 잡아 둔 상태입니다. 실제 내용은 대부분 [eda](eda/README.md)에 있습니다.
 
 ## 하위 폴더 — 주제별 심화
 
@@ -30,6 +29,7 @@
 | [ipc](ipc/README.md) | 4 | **동기 통신.** OpenFeign, gRPC·Protobuf, 무엇을 언제 쓰는가 |
 | [gateway](gateway/README.md) | 4 | **API 게이트웨이.** 라우팅·로드밸런싱, 필터, Rate Limiter |
 | [auth](auth/README.md) | 7 | **인증·인가.** JWT, OAuth2·Keycloak, 역할 기반 인가, BFF, SPA·CORS, 회원가입 |
+| [observation](observation/README.md) | 7 | **관측 가능성.** 지표·추적·로그, Prometheus·Grafana, OpenTelemetry, Loki, PLG 실습 |
 | [eda](eda/README.md) | 17 | **비동기·이벤트.** RabbitMQ·Kafka, Spring Cloud Stream, Ack/DLQ, Saga, Outbox, 멱등성 |
 
 개요 문서가 **"무슨 문제인가"** 를 짚고, 하위 폴더가 **"어떻게 푸는가"** 를 펼칩니다.
@@ -38,6 +38,7 @@
 05 서비스 간 통신 ─┬─ 동기 → ipc/
                    └─ 비동기 → eda/
 03 API 게이트웨이 ──── gateway/
+07 분산 추적 ────────── observation/ (지표·추적·로그 전반)
 08 분산 트랜잭션 ────── eda/ (Saga·Outbox)
 (인증은 개요 없이) ──── auth/
 ```
@@ -56,5 +57,6 @@
    → 06 장애 격리                   (호출이 실패할 때)
    → gateway/                      (앞에 관문 두기)
    → auth/                         (관문에서 인증하기)
+   → observation/                  (돌아가는 걸 들여다보기)
    → eda/                          (아예 기다리지 않기)
 ```

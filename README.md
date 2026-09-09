@@ -1,6 +1,6 @@
 # cs-study
 
-공부한 CS 개념을 영역별로 정리해 둔 저장소입니다. 문서 167편.
+공부한 CS 개념을 영역별로 정리해 둔 저장소입니다. 문서 176편.
 
 수업을 들으며 남긴 기록에서 시작해, 나중에 다시 찾아볼 수 있도록 다듬었습니다.
 처음에는 날짜별로 쌓다 보니 한 파일에 여러 주제가 뒤섞였고, 그래서 **주제 단위로 다시 쪼개고 영역별로 나눴습니다.**
@@ -70,6 +70,8 @@ cs-study/
 │   ├── gateway/              4    라우팅·로드밸런싱, 필터, Rate Limiter(토큰 버킷)
 │   ├── auth/                 7    JWT, OAuth2·Keycloak, 역할 기반 인가, BFF,
 │   │                             SPA·CORS·PKCE, 회원가입과 사용자 데이터
+│   ├── observation/          7    관측 가능성 3대 요소, 메트릭·Prometheus·Grafana,
+│   │                             분산 추적·OpenTelemetry, 분산 로깅·Loki, PLG 실습
 │   └── eda/                 17    이벤트 기반 아키텍처, RabbitMQ·Kafka, Spring Cloud Stream,
 │                                 Ack·DLQ, Saga 2종, Transactional Outbox, 멱등성
 ├── frontend/                      프론트엔드
@@ -99,7 +101,7 @@ cs-study/
 | 자바 | [java](java/README.md) | 7 |
 | 스프링 | [spring](spring/README.md) | 12 |
 | JPA | [jpa](jpa/README.md) | 6 |
-| 마이크로서비스 | [msa](msa/README.md) — [ipc](msa/ipc/README.md) · [gateway](msa/gateway/README.md) · [auth](msa/auth/README.md) · [eda](msa/eda/README.md) | 42 |
+| 마이크로서비스 | [msa](msa/README.md) — [ipc](msa/ipc/README.md) · [gateway](msa/gateway/README.md) · [auth](msa/auth/README.md) · [observation](msa/observation/README.md) · [eda](msa/eda/README.md) | 50 |
 | 프론트엔드 | [frontend](frontend/README.md) — [javascript](frontend/javascript/README.md) · [react](frontend/react/README.md) | 5 |
 | 버전 관리 | [git](git/README.md) | 1 |
 | 도구 | [tools](tools/README.md) | 1 |
@@ -126,3 +128,4 @@ cs-study/
 - **밀려드는 부하** → 넘치면 거절하는 쪽은 [msa/06](msa/06-장애-격리.md)·[performance/02](performance/02-스레드풀.md), 쌓아 두고 나중에 처리하는 쪽은 [msa/eda/03](msa/eda/03-eda-도입의-3대-이점.md), 관문에서 아예 막는 쪽은 [msa/gateway/04](msa/gateway/04-요청-제한-rate-limiter.md)
 - **인증** → 한 애플리케이션 안에서는 [spring/09](spring/09-spring-security.md)·[spring/11](spring/11-토큰-인증.md), 서비스가 나뉘면 [msa/auth](msa/auth/README.md)
 - **캐시·공유 상태** → 저장소 자체는 [database/redis](database/redis/README.md), 게이트웨이가 여러 대일 때 상태를 공유하는 쓰임은 [msa/gateway/04](msa/gateway/04-요청-제한-rate-limiter.md)
+- **응답 시간을 어떤 숫자로 볼 것인가** → 통계 개념은 [performance/01](performance/01-p95와-백분위수.md), 그걸 실제로 수집·시각화하는 방법은 [msa/observation](msa/observation/README.md)
