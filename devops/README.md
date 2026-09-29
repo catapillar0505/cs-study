@@ -4,5 +4,6 @@
 |---|---|---|
 | [ansible](ansible/README.md) | 2편 | 에이전트 없는 실행 원리, 멱등성, playbook 작성 원칙 |
 | [terraform](terraform/README.md) | 1편 | 상태 파일과 잠금, drift |
+| [monitoring](monitoring/README.md) | 작성 예정 | 인프라 운영 모니터링 — CloudWatch·Prometheus·Loki, 알림 설계, SLO, 런북 |
 
 > 컨테이너 이미지 태그 전략은 [container/06](../container/06-이미지-태그-전략.md)에 있습니다.

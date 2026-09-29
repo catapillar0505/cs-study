@@ -47,7 +47,8 @@ cs-study/
 │
 ├── devops/                        자동화·IaC
 │   ├── ansible/              2    동작 원리와 멱등성, playbook 작성 원칙
-│   └── terraform/            1    상태 파일과 잠금, drift
+│   ├── terraform/            1    상태 파일과 잠금, drift
+│   └── monitoring/           -    인프라 운영 모니터링 (작성 예정)
 │
 ├── database/                      데이터베이스
 │   ├── basics/               3    관계형 DB 개념, DDL, DQL
@@ -96,7 +97,7 @@ cs-study/
 | 컨테이너 | [container](container/README.md) | 6 |
 | 쿠버네티스 | [kubernetes](kubernetes/README.md) | 15 |
 | 클라우드 | [cloud](cloud/README.md) — [aws](cloud/public-cloud/aws/README.md) · [open-stack](cloud/private-cloud/open-stack/README.md) | 13 |
-| 자동화·IaC | [devops](devops/README.md) — [ansible](devops/ansible/README.md) · [terraform](devops/terraform/README.md) | 3 |
+| 자동화·IaC | [devops](devops/README.md) — [ansible](devops/ansible/README.md) · [terraform](devops/terraform/README.md) · [monitoring](devops/monitoring/README.md) | 3 |
 | 데이터베이스 | [database](database/README.md) — [basics](database/basics/README.md) · [mysql](database/mysql/README.md) · [redis](database/redis/README.md) | 16 |
 | 인공지능 | [ai](ai/README.md) | 7 |
 | 성능·측정 | [performance](performance/README.md) | 3 |
@@ -131,5 +132,6 @@ cs-study/
 - **인증** → 한 애플리케이션 안에서는 [spring/09](spring/09-spring-security.md)·[spring/11](spring/11-토큰-인증.md), 서비스가 나뉘면 [msa/auth](msa/auth/README.md)
 - **캐시·공유 상태** → 저장소 자체는 [database/redis](database/redis/README.md), 게이트웨이가 여러 대일 때 상태를 공유하는 쓰임은 [msa/gateway/04](msa/gateway/04-요청-제한-rate-limiter.md)
 - **응답 시간을 어떤 숫자로 볼 것인가** → 통계 개념은 [performance/01](performance/01-p95와-백분위수.md), 그걸 실제로 수집·시각화하는 방법은 [msa/observation](msa/observation/README.md)
+- **모니터링** → 애플리케이션 관점(Trace ID, PLG)은 [msa/observation](msa/observation/README.md), 인프라 운영 관점(노드·AWS 계정, 알림, 런북)은 [devops/monitoring](devops/monitoring/README.md)
 - **컨테이너 이미지** → 이미지·레지스트리·태그 전략은 [container](container/README.md), 그 이미지를 자동으로 만들어 배포하는 파이프라인은 [msa/cicd](msa/cicd/README.md)
 - **설정을 코드로 관리하기** → 인프라 프로비저닝은 [devops](devops/README.md)(Terraform·Ansible), 쿠버네티스 배포 상태는 [msa/cicd/02](msa/cicd/02-gitops.md) GitOps
