@@ -18,3 +18,12 @@
 | 12 | [고가용성(HA) 설계](12-고가용성-설계.md) | 장애 단위, 쿼럼과 홀수 대수, 배포도 장애다 |
 
 > 11·12편은 AWS에만 해당하는 내용이 아니라 **어느 환경에나 적용되는 설계 개념**입니다.
+
+## 하위 폴더 — 주제별 심화
+
+| 폴더 | 편수 | 다루는 내용 |
+|---|---|---|
+| [serverless](serverless/README.md) | 6 | **서버리스.** Lambda Java 핸들러, API Gateway 프록시 통합, SAM, 콜드 스타트·SnapStart, S3 Presigned URL 실습 |
+
+> 위 01~12편이 **서버를 직접 띄우는 네트워크**(VPC·서브넷·NAT) 이야기라면, serverless는 **서버를 띄우지 않는** 쪽입니다.
+> 둘이 만나는 지점: Lambda를 VPC 안에 넣으면 [05 NAT Gateway](05-nat-gateway.md)가 다시 필요해집니다.

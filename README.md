@@ -1,6 +1,6 @@
 # cs-study
 
-공부한 CS 개념을 영역별로 정리해 둔 저장소입니다. 문서 182편.
+공부한 CS 개념을 영역별로 정리해 둔 저장소입니다. 문서 188편.
 
 수업을 들으며 남긴 기록에서 시작해, 나중에 다시 찾아볼 수 있도록 다듬었습니다.
 처음에는 날짜별로 쌓다 보니 한 파일에 여러 주제가 뒤섞였고, 그래서 **주제 단위로 다시 쪼개고 영역별로 나눴습니다.**
@@ -41,7 +41,9 @@ cs-study/
 ├── cloud/                         클라우드
 │   ├── public-cloud/              빌려 쓰는 클라우드
 │   │   └── aws/             12    클라우드 5계층, CIDR, VPC·서브넷, 라우팅·IGW, NAT GW,
-│   │                              SG·NACL, 트래픽 흐름, Bastion, 리전·엣지, 3Tier, HA
+│   │       │                      SG·NACL, 트래픽 흐름, Bastion, 리전·엣지, 3Tier, HA
+│   │       └── serverless/   6    Lambda·Java 핸들러, API Gateway 프록시 통합, SAM,
+│   │                              콜드 스타트·SnapStart, S3 Presigned URL 실습
 │   └── private-cloud/             직접 짓는 클라우드
 │       └── open-stack/       1    퍼블릭과 무엇이 다른가, 표준화가 먼저인 이유
 │
@@ -96,7 +98,7 @@ cs-study/
 | 가상화 | [virtualization](virtualization/README.md) | 3 |
 | 컨테이너 | [container](container/README.md) | 6 |
 | 쿠버네티스 | [kubernetes](kubernetes/README.md) | 15 |
-| 클라우드 | [cloud](cloud/README.md) — [aws](cloud/public-cloud/aws/README.md) · [open-stack](cloud/private-cloud/open-stack/README.md) | 13 |
+| 클라우드 | [cloud](cloud/README.md) — [aws](cloud/public-cloud/aws/README.md) · [serverless](cloud/public-cloud/aws/serverless/README.md) · [open-stack](cloud/private-cloud/open-stack/README.md) | 19 |
 | 자동화·IaC | [devops](devops/README.md) — [ansible](devops/ansible/README.md) · [terraform](devops/terraform/README.md) · [monitoring](devops/monitoring/README.md) | 3 |
 | 데이터베이스 | [database](database/README.md) — [basics](database/basics/README.md) · [mysql](database/mysql/README.md) · [redis](database/redis/README.md) | 16 |
 | 인공지능 | [ai](ai/README.md) | 7 |
@@ -126,7 +128,7 @@ cs-study/
 - **캐시** → 동작은 [database/redis](database/redis/README.md), 설계 전략은 [performance](performance/README.md)
 - **고가용성** → 설계 원칙은 [aws/12](cloud/public-cloud/aws/12-고가용성-설계.md), 스케줄링 구현은 [kubernetes/10](kubernetes/10-podantiaffinity와-스케줄링.md)
 - **서비스 디스커버리** → 애플리케이션이 직접 찾는 방식은 [msa/02](msa/02-서비스-디스커버리.md), 플랫폼이 대신 찾아 주는 방식은 [kubernetes/04](kubernetes/04-서비스디스커버리-service와-coredns.md)
-- **외부 진입점** → 애플리케이션 층은 [msa/03](msa/03-api-게이트웨이.md) Gateway, 플랫폼 층은 [kubernetes/09](kubernetes/09-ingress.md) Ingress
+- **외부 진입점** → 애플리케이션 층은 [msa/03](msa/03-api-게이트웨이.md) Gateway, 플랫폼 층은 [kubernetes/09](kubernetes/09-ingress.md) Ingress, 관리형 서비스는 [aws/serverless/03](cloud/public-cloud/aws/serverless/03-api-gateway와-프록시-통합.md) API Gateway
 - **트랜잭션** → 한 DB 안에서는 [spring/08](spring/08-트랜잭션.md)·[database/mysql](database/mysql/README.md), 서비스가 나뉘면 [msa/08](msa/08-분산-트랜잭션과-saga.md)과 [msa/eda](msa/eda/README.md)
 - **밀려드는 부하** → 넘치면 거절하는 쪽은 [msa/06](msa/06-장애-격리.md)·[performance/02](performance/02-스레드풀.md), 쌓아 두고 나중에 처리하는 쪽은 [msa/eda/03](msa/eda/03-eda-도입의-3대-이점.md), 관문에서 아예 막는 쪽은 [msa/gateway/04](msa/gateway/04-요청-제한-rate-limiter.md)
 - **인증** → 한 애플리케이션 안에서는 [spring/09](spring/09-spring-security.md)·[spring/11](spring/11-토큰-인증.md), 서비스가 나뉘면 [msa/auth](msa/auth/README.md)
@@ -134,4 +136,5 @@ cs-study/
 - **응답 시간을 어떤 숫자로 볼 것인가** → 통계 개념은 [performance/01](performance/01-p95와-백분위수.md), 그걸 실제로 수집·시각화하는 방법은 [msa/observation](msa/observation/README.md)
 - **모니터링** → 애플리케이션 관점(Trace ID, PLG)은 [msa/observation](msa/observation/README.md), 인프라 운영 관점(노드·AWS 계정, 알림, 런북)은 [devops/monitoring](devops/monitoring/README.md)
 - **컨테이너 이미지** → 이미지·레지스트리·태그 전략은 [container](container/README.md), 그 이미지를 자동으로 만들어 배포하는 파이프라인은 [msa/cicd](msa/cicd/README.md)
-- **설정을 코드로 관리하기** → 인프라 프로비저닝은 [devops](devops/README.md)(Terraform·Ansible), 쿠버네티스 배포 상태는 [msa/cicd/02](msa/cicd/02-gitops.md) GitOps
+- **설정을 코드로 관리하기** → 인프라 프로비저닝은 [devops](devops/README.md)(Terraform·Ansible), 쿠버네티스 배포 상태는 [msa/cicd/02](msa/cicd/02-gitops.md) GitOps, 서버리스 앱은 [aws/serverless/04](cloud/public-cloud/aws/serverless/04-sam과-cloudformation.md) SAM
+- **애플리케이션을 어디서 돌리나** → VM은 [virtualization](virtualization/README.md), 컨테이너는 [container](container/README.md)·[kubernetes](kubernetes/README.md), 함수 단위는 [aws/serverless](cloud/public-cloud/aws/serverless/README.md)

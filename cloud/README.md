@@ -4,5 +4,5 @@
 
 | 영역 | 플랫폼 | 문서 |
 |---|---|---|
-| [public cloud](public-cloud/README.md) | [aws](public-cloud/aws/README.md) | 12편 |
+| [public cloud](public-cloud/README.md) | [aws](public-cloud/aws/README.md) — [serverless](public-cloud/aws/serverless/README.md) | 18편 |
 | [private cloud](private-cloud/README.md) | [open-stack](private-cloud/open-stack/README.md) | 1편 |
